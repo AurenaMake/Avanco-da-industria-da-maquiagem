@@ -1,0 +1,725 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AURENA — Conecte-se</title>
+
+    <!-- FONTES -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --espresso: #2f1e1a;
+        --bronze: #b8844f;
+        --terracotta: #a65f46;
+        --caramel: #c78f62;
+        --cream: #f3e7d8;
+        --off-white: #fcf8f3;
+        --wine: #6f3b46;
+        --soft-black: #1c1817;
+
+        --serif: "Cormorant Garamond", Georgia, serif;
+
+        --sans: "Montserrat", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+
+        min-height: 100%;
+
+        font-family: var(--sans);
+      }
+
+      body {
+        min-height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 40px 20px;
+
+        overflow-x: hidden;
+
+        color: var(--off-white);
+
+        background:
+          radial-gradient(
+            circle at 75% 20%,
+            rgba(184, 132, 79, 0.2),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 15% 80%,
+            rgba(111, 59, 70, 0.22),
+            transparent 32%
+          ),
+          linear-gradient(145deg, #17100e, #2c1b16 52%, #160f0d);
+      }
+
+      body::before {
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        opacity: 0.2;
+
+        background-image: radial-gradient(
+          rgba(243, 231, 216, 0.14) 0.7px,
+          transparent 0.8px
+        );
+
+        background-size: 8px 8px;
+      }
+
+      .profile-page {
+        position: relative;
+
+        z-index: 2;
+
+        width: min(940px, 100%);
+
+        display: grid;
+
+        grid-template-columns:
+          0.9fr
+          1.1fr;
+
+        overflow: hidden;
+
+        border: 1px solid rgba(218, 174, 108, 0.25);
+
+        border-radius: 5px;
+
+        background: rgba(252, 248, 243, 0.98);
+
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.46);
+
+        color: var(--espresso);
+      }
+
+      /* ===========================
+         FOTO
+      =========================== */
+
+      .profile-image-area {
+        position: relative;
+
+        min-height: 610px;
+
+        overflow: hidden;
+
+        background: #241510;
+      }
+
+      .profile-image-area img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        object-position: center top;
+      }
+
+      .profile-image-area::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background: linear-gradient(
+          to top,
+          rgba(28, 16, 13, 0.72) 0%,
+          transparent 42%
+        );
+      }
+
+      .image-brand {
+        position: absolute;
+
+        left: 30px;
+        bottom: 28px;
+
+        z-index: 3;
+
+        color: var(--off-white);
+      }
+
+      .image-brand strong {
+        display: block;
+
+        font-family: var(--serif);
+
+        font-size: 2rem;
+
+        font-weight: 500;
+
+        letter-spacing: 0.14em;
+      }
+
+      .image-brand span {
+        display: block;
+
+        margin-top: 4px;
+
+        color: rgba(252, 248, 243, 0.7);
+
+        font-size: 0.55rem;
+
+        letter-spacing: 0.25em;
+      }
+
+      /* ===========================
+         CONTEÚDO
+      =========================== */
+
+      .profile-content {
+        position: relative;
+
+        padding: clamp(42px, 6vw, 68px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+      }
+
+      .profile-eyebrow {
+        color: var(--terracotta);
+
+        font-size: 0.66rem;
+
+        font-weight: 700;
+
+        letter-spacing: 0.3em;
+
+        text-transform: uppercase;
+      }
+
+      .profile-name {
+        margin: 16px 0 8px;
+
+        font-family: var(--serif);
+
+        font-size: clamp(3rem, 6vw, 5.5rem);
+
+        font-weight: 500;
+
+        line-height: 0.88;
+
+        letter-spacing: -0.035em;
+      }
+
+      .profile-role {
+        margin: 0;
+
+        color: rgba(47, 30, 26, 0.6);
+
+        font-size: 0.69rem;
+
+        font-weight: 600;
+
+        line-height: 1.5;
+
+        letter-spacing: 0.11em;
+
+        text-transform: uppercase;
+      }
+
+      .profile-line {
+        width: 100%;
+
+        height: 1px;
+
+        margin: 30px 0;
+
+        background: linear-gradient(
+          90deg,
+          var(--bronze),
+          rgba(184, 132, 79, 0.08)
+        );
+      }
+
+      .profile-text {
+        margin: 0 0 30px;
+
+        color: rgba(47, 30, 26, 0.72);
+
+        font-size: 0.92rem;
+
+        line-height: 1.75;
+      }
+
+      /* ===========================
+         BOTÕES
+      =========================== */
+
+      .profile-links {
+        display: grid;
+
+        gap: 12px;
+      }
+
+      .profile-link {
+        min-height: 62px;
+
+        padding: 0 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        border: 1px solid rgba(47, 30, 26, 0.16);
+
+        color: var(--espresso);
+
+        text-decoration: none;
+
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          color 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .profile-link:hover {
+        transform: translateY(-3px);
+      }
+
+      .profile-link.linkedin:hover {
+        background: var(--espresso);
+
+        border-color: var(--espresso);
+
+        color: var(--off-white);
+      }
+
+      .profile-link.github:hover {
+        background: var(--terracotta);
+
+        border-color: var(--terracotta);
+
+        color: #ffffff;
+      }
+
+      .profile-link-icon {
+        width: 35px;
+        height: 35px;
+
+        display: grid;
+
+        place-items: center;
+
+        flex: 0 0 auto;
+
+        border: 1px solid currentColor;
+
+        border-radius: 50%;
+
+        font-size: 0.72rem;
+
+        font-weight: 700;
+      }
+
+      .profile-link-copy {
+        flex: 1;
+
+        min-width: 0;
+      }
+
+      .profile-link-copy small {
+        display: block;
+
+        margin-bottom: 2px;
+
+        font-size: 0.5rem;
+
+        font-weight: 600;
+
+        letter-spacing: 0.2em;
+
+        opacity: 0.62;
+      }
+
+      .profile-link-copy strong {
+        display: block;
+
+        font-family: var(--serif);
+
+        font-size: 1.42rem;
+
+        font-weight: 600;
+      }
+
+      .profile-arrow {
+        font-size: 1.2rem;
+      }
+
+      /* ===========================
+         TONS
+      =========================== */
+
+      .profile-shades {
+        display: flex;
+
+        gap: 6px;
+
+        margin-top: 30px;
+      }
+
+      .profile-shades span {
+        width: 15px;
+        height: 15px;
+
+        border-radius: 50%;
+
+        background: var(--shade);
+      }
+
+      /* ===========================
+         VOLTAR
+      =========================== */
+
+      .profile-back {
+        display: inline-block;
+
+        margin-top: 28px;
+
+        color: rgba(47, 30, 26, 0.55);
+
+        font-size: 0.6rem;
+
+        font-weight: 600;
+
+        letter-spacing: 0.15em;
+
+        text-decoration: none;
+
+        text-transform: uppercase;
+      }
+
+      .profile-back:hover {
+        color: var(--terracotta);
+      }
+
+      /* ===========================
+         ERRO
+      =========================== */
+
+      .profile-error {
+        display: none;
+
+        padding: 60px;
+
+        text-align: center;
+
+        color: var(--espresso);
+      }
+
+      .profile-error h1 {
+        font-family: var(--serif);
+
+        font-size: 3rem;
+      }
+
+      /* ===========================
+         MOBILE
+      =========================== */
+
+      @media (max-width: 720px) {
+        body {
+          align-items: flex-start;
+
+          padding: 18px;
+        }
+
+        .profile-page {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-image-area {
+          min-height: 430px;
+        }
+
+        .profile-content {
+          padding: 34px 26px 38px;
+        }
+
+        .profile-name {
+          font-size: clamp(3rem, 15vw, 4.6rem);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="profile-page" id="profilePage">
+      <!-- FOTO -->
+
+      <div class="profile-image-area">
+        <img id="profileImage" src="" alt="" />
+
+        <div class="image-brand">
+          <strong> AURENA </strong>
+
+          <span> BELEZA SEM LACUNAS </span>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO -->
+
+      <section class="profile-content">
+        <span class="profile-eyebrow"> CONEXÕES AURENA </span>
+
+        <h1 class="profile-name" id="profileName"></h1>
+
+        <p class="profile-role" id="profileRole"></p>
+
+        <div class="profile-line"></div>
+
+        <p class="profile-text">
+          Conheça mais sobre minha trajetória, projetos e experiências
+          profissionais. Escolha uma das plataformas abaixo para continuar essa
+          conexão.
+        </p>
+
+        <div class="profile-links">
+          <!-- LINKEDIN -->
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="linkedinButton"
+            class="profile-link linkedin"
+          >
+            <span class="profile-link-icon"> in </span>
+
+            <div class="profile-link-copy">
+              <small> PROFISSIONAL </small>
+
+              <strong> LinkedIn </strong>
+            </div>
+
+            <span class="profile-arrow"> ↗ </span>
+          </a>
+
+          <!-- GITHUB -->
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="githubButton"
+            class="profile-link github"
+          >
+            <span class="profile-link-icon"> GH </span>
+
+            <div class="profile-link-copy">
+              <small> PROJETOS & CÓDIGO </small>
+
+              <strong> GitHub </strong>
+            </div>
+
+            <span class="profile-arrow"> ↗ </span>
+          </a>
+        </div>
+
+        <!-- TONS -->
+
+        <div class="profile-shades" aria-hidden="true">
+          <span style="--shade: #4d3028"></span>
+
+          <span style="--shade: #6f3b46"></span>
+
+          <span style="--shade: #8e5646"></span>
+
+          <span style="--shade: #a65f46"></span>
+
+          <span style="--shade: #c78f62"></span>
+
+          <span style="--shade: #dab18e"></span>
+        </div>
+
+        <a href="./index.html#conexoes" class="profile-back">
+          ← voltar para AURENA
+        </a>
+      </section>
+
+      <!-- ERRO -->
+
+      <section class="profile-error" id="profileError">
+        <h1>Perfil não encontrado</h1>
+
+        <p>Este perfil AURENA não está disponível.</p>
+
+        <a href="./index.html"> Voltar para AURENA </a>
+      </section>
+    </main>
+
+    <script>
+      /* =====================================================
+         DADOS DOS INTEGRANTES
+      ===================================================== */
+
+      const profiles = {
+        ana: {
+          name: "Ana Beatriz",
+
+          role: "Arquitetura de Dados e Visualização",
+
+          image: "./assets/team/ana.jpg",
+
+          linkedin: "https://www.linkedin.com/in/anbez/",
+
+          github: "https://github.com/Anbez",
+        },
+
+        adrielle: {
+          name: "Adrielle Magalhães",
+
+          role: "Product Manager & Engenharia de Dados",
+
+          image: "./assets/team/marcia.jpg",
+
+          linkedin: "https://www.linkedin.com/in/adriellermagalhaes/",
+
+          github: "https://github.com/adrielleRM",
+        },
+
+        cassiano: {
+          name: "Cassiano Calian",
+
+          role: "Front-end, Site e Experiência Visual",
+
+          image: "./assets/team/cassiano.jpg",
+
+          linkedin: "https://www.linkedin.com/in/cassianocalian/",
+
+          github: "https://github.com/CassianoCalian",
+        },
+
+        juliana: {
+          name: "Juliana Matias",
+
+          role: "Design e Apoio Criativo",
+
+          image: "./assets/team/juliana.jpg",
+
+          linkedin: "https://www.linkedin.com/in/juliana-matias/",
+
+          github: "https://github.com/julianamatiaaass-gif",
+        },
+
+        karla: {
+          name: "Karla",
+
+          role: "Python e Análise de Dados",
+
+          image: "./assets/team/karla.jpg",
+
+          linkedin: "https://www.linkedin.com/in/karla-maria-m-b86157215/",
+
+          github: "https://github.com/karla-martins",
+        },
+
+        wandernilson: {
+          name: "Wandernilson G. Valentim",
+
+          role: "DAX, Power BI e Modelagem",
+
+          image: "./assets/team/wandernilson.jpg",
+
+          linkedin: "https://www.linkedin.com/in/wandernilsongv/",
+
+          github: "https://github.com/wn-dr",
+        },
+      };
+
+      /* =====================================================
+         IDENTIFICA O PERFIL PELA URL
+      ===================================================== */
+
+      const params = new URLSearchParams(window.location.search);
+
+      const profileKey = params.get("p");
+
+      const profile = profiles[profileKey];
+
+      /* =====================================================
+         ELEMENTOS
+      ===================================================== */
+
+      const page = document.getElementById("profilePage");
+
+      const image = document.getElementById("profileImage");
+
+      const name = document.getElementById("profileName");
+
+      const role = document.getElementById("profileRole");
+
+      const linkedin = document.getElementById("linkedinButton");
+
+      const github = document.getElementById("githubButton");
+
+      const error = document.getElementById("profileError");
+
+      /* =====================================================
+         PREENCHE A PÁGINA
+      ===================================================== */
+
+      if (profile) {
+        image.src = profile.image;
+
+        image.alt = `Foto de ${profile.name}`;
+
+        name.textContent = profile.name;
+
+        role.textContent = profile.role;
+
+        linkedin.href = profile.linkedin;
+
+        github.href = profile.github;
+
+        document.title = `${profile.name} — AURENA`;
+      } else {
+        page.querySelector(".profile-image-area").style.display = "none";
+
+        page.querySelector(".profile-content").style.display = "none";
+
+        error.style.display = "block";
+
+        page.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

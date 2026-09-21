@@ -4518,3 +4518,1638 @@ body.intro-lock {
     0 10px 30px rgba(0, 0, 0, 0.25),
     0 0 22px rgba(214, 163, 92, 0.16);
 }
+
+/* =========================================================
+   AURENA — CONEXÕES / LINKEDIN
+========================================================= */
+
+.aurena-connect-section {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 100vh;
+
+  padding: clamp(86px, 9vw, 140px) 7vw clamp(90px, 10vw, 150px);
+
+  background:
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(184, 132, 79, 0.19),
+      transparent 25%
+    ),
+    radial-gradient(circle at 8% 78%, rgba(111, 59, 70, 0.18), transparent 28%),
+    linear-gradient(145deg, #17100e 0%, #2a1914 48%, #1b1210 100%);
+
+  color: var(--off-white);
+
+  isolation: isolate;
+}
+
+/* TEXTURA */
+
+.aurena-connect-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: 0.26;
+
+  pointer-events: none;
+
+  background-image: radial-gradient(
+    rgba(243, 231, 216, 0.12) 0.7px,
+    transparent 0.8px
+  );
+
+  background-size: 8px 8px;
+}
+
+/* LETRA A GIGANTE AO FUNDO */
+
+.connect-bg-number {
+  position: absolute;
+
+  top: -10vw;
+  right: -2vw;
+
+  z-index: -1;
+
+  color: rgba(243, 231, 216, 0.024);
+
+  font-family: var(--serif);
+
+  font-size: clamp(18rem, 38vw, 42rem);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  user-select: none;
+}
+
+/* LUZES */
+
+.connect-glow {
+  position: absolute;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.connect-glow-one {
+  top: 8%;
+  right: 4%;
+
+  width: 320px;
+  height: 320px;
+
+  background: rgba(199, 143, 98, 0.13);
+}
+
+.connect-glow-two {
+  bottom: 2%;
+  left: -3%;
+
+  width: 360px;
+  height: 360px;
+
+  background: rgba(111, 59, 70, 0.14);
+}
+
+/* CONTAINER */
+
+.connect-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1380px, 100%);
+
+  margin: 0 auto;
+}
+
+/* ===============================
+   CABEÇALHO
+================================ */
+
+.connect-header {
+  max-width: 860px;
+
+  margin: 0 auto clamp(48px, 6vw, 82px);
+
+  text-align: center;
+}
+
+.connect-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: var(--caramel);
+
+  font-size: 0.69rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.32em;
+}
+
+.connect-header h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(3rem, 6.4vw, 6.5rem);
+
+  font-weight: 500;
+
+  line-height: 0.93;
+
+  letter-spacing: -0.035em;
+}
+
+.connect-header h2 em {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #d4a06f;
+
+  font-weight: 400;
+}
+
+.connect-header > p {
+  max-width: 680px;
+
+  margin: 26px auto 0;
+
+  color: rgba(252, 248, 243, 0.67);
+
+  font-size: clamp(0.88rem, 1.1vw, 1rem);
+
+  font-weight: 300;
+
+  line-height: 1.8;
+}
+
+/* TONS */
+
+.connect-shades {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.connect-shades span {
+  width: 22px;
+  height: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 50%;
+
+  background: var(--shade);
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.connect-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(20px, 2.2vw, 30px);
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.connect-person-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  border: 1px solid rgba(218, 174, 108, 0.17);
+
+  border-radius: 4px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(252, 248, 243, 0.97),
+    rgba(243, 231, 216, 0.94)
+  );
+
+  color: var(--espresso);
+
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+/* REFLEXO DO CARD */
+
+.connect-person-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -60%;
+  left: -95px;
+
+  width: 70px;
+  height: 190%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: rotate(19deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.58),
+    transparent
+  );
+}
+
+.connect-person-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(218, 174, 108, 0.38);
+
+  box-shadow:
+    0 38px 85px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(218, 174, 108, 0.08);
+}
+
+.connect-person-card:hover::after {
+  opacity: 1;
+
+  animation: connectCardShine 0.9s ease forwards;
+}
+
+@keyframes connectCardShine {
+  from {
+    left: -95px;
+  }
+
+  to {
+    left: 120%;
+  }
+}
+
+/* ===============================
+   FOTO
+================================ */
+
+.connect-person-photo {
+  position: relative;
+
+  overflow: hidden;
+
+  height: clamp(300px, 30vw, 430px);
+
+  background: #2a1a15;
+}
+
+.connect-person-photo::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(to top, rgba(31, 18, 14, 0.62) 0%, transparent 36%),
+    linear-gradient(135deg, rgba(184, 132, 79, 0.05), transparent 50%);
+}
+
+.connect-person-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  filter: saturate(0.88) contrast(1.03);
+
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s ease;
+}
+
+.connect-person-card:hover .connect-person-photo img {
+  transform: scale(1.035);
+
+  filter: saturate(0.98) contrast(1.04);
+}
+
+/* NÚMERO DO CARD */
+
+.connect-card-number {
+  position: absolute;
+
+  right: 18px;
+  bottom: 15px;
+
+  z-index: 2;
+
+  color: rgba(252, 248, 243, 0.82);
+
+  font-family: var(--serif);
+
+  font-size: 2.2rem;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+/* ===============================
+   CONTEÚDO
+================================ */
+
+.connect-person-content {
+  padding: 24px;
+}
+
+.connect-person-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-height: 82px;
+}
+
+.connect-person-heading h3 {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(1.7rem, 2.1vw, 2.35rem);
+
+  font-weight: 600;
+
+  line-height: 0.98;
+}
+
+.connect-person-heading p {
+  margin: 10px 0 0;
+
+  color: rgba(47, 30, 26, 0.64);
+
+  font-size: 0.69rem;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* LINKEDIN */
+
+.connect-in-badge {
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: var(--espresso);
+
+  color: var(--cream);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.88rem;
+
+  font-weight: 700;
+}
+
+/* ===============================
+   QR CODE
+================================ */
+
+.connect-person-footer {
+  display: grid;
+
+  grid-template-columns:
+    112px
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(47, 30, 26, 0.12);
+}
+
+.connect-qr-link {
+  display: block;
+
+  padding: 7px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(47, 30, 26, 0.1);
+
+  box-shadow: 0 8px 20px rgba(47, 30, 26, 0.1);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.connect-qr-link:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 24px rgba(47, 30, 26, 0.15);
+}
+
+.connect-qr-link img {
+  width: 100%;
+
+  display: block;
+}
+
+/* TEXTO QR */
+
+.connect-qr-copy {
+  min-width: 0;
+}
+
+.connect-qr-copy span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--terracotta);
+
+  font-size: 0.61rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.24em;
+}
+
+.connect-qr-copy strong {
+  display: block;
+
+  color: var(--espresso);
+
+  font-family: var(--serif);
+
+  font-size: 1.65rem;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.connect-qr-copy small {
+  display: block;
+
+  margin-top: 8px;
+
+  color: rgba(47, 30, 26, 0.57);
+
+  font-size: 0.69rem;
+
+  line-height: 1.5;
+}
+
+/* ===============================
+   ENCERRAMENTO
+================================ */
+
+.connect-final-signature {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: clamp(50px, 6vw, 80px);
+
+  color: rgba(252, 248, 243, 0.65);
+
+  text-align: center;
+}
+
+.connect-final-signature > span {
+  width: min(100px, 10vw);
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, var(--bronze));
+}
+
+.connect-final-signature > span:last-child {
+  transform: scaleX(-1);
+}
+
+.connect-final-signature p {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+
+  font-style: italic;
+}
+
+.connect-final-signature strong {
+  color: var(--caramel);
+
+  font-weight: 500;
+}
+
+/* ===============================
+   ENTRADA NO SCROLL
+================================ */
+
+.connect-reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.connect-reveal.connect-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ===============================
+   TABLET
+================================ */
+
+@media (max-width: 1050px) {
+  .connect-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .connect-person-photo {
+    height: 390px;
+  }
+}
+
+/* ===============================
+   CELULAR
+================================ */
+
+@media (max-width: 680px) {
+  .aurena-connect-section {
+    padding: 78px 18px 82px;
+  }
+
+  .connect-header {
+    margin-bottom: 42px;
+  }
+
+  .connect-header h2 {
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
+  }
+
+  .connect-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .connect-person-card {
+    max-width: 470px;
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+
+  .connect-person-photo {
+    height: min(118vw, 500px);
+  }
+
+  .connect-person-content {
+    padding: 20px;
+  }
+
+  .connect-person-heading {
+    min-height: 0;
+  }
+
+  .connect-person-footer {
+    grid-template-columns:
+      102px
+      minmax(0, 1fr);
+
+    gap: 16px;
+  }
+
+  .connect-final-signature > span {
+    display: none;
+  }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+  .connect-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .connect-person-card,
+  .connect-person-photo img,
+  .connect-qr-link {
+    transition: none;
+  }
+
+  .connect-person-card:hover::after {
+    animation: none;
+  }
+}
+
+/* ==========================================================
+   AURENA CONEXÕES — VERSÃO COMPACTA DESKTOP
+   6 INTEGRANTES EM UMA ÚNICA TELA
+========================================================== */
+
+@media (min-width: 1100px) and (min-height: 650px) {
+  .aurena-connect-section {
+    height: 100svh;
+    min-height: 650px;
+
+    padding: 24px 3vw 20px;
+
+    display: flex;
+    align-items: stretch;
+
+    overflow: hidden;
+  }
+
+  /* CONTAINER PRINCIPAL */
+
+  .connect-container {
+    width: min(1450px, 100%);
+    height: 100%;
+
+    display: grid;
+
+    grid-template-rows:
+      auto
+      minmax(0, 1fr)
+      auto;
+
+    margin: 0 auto;
+  }
+
+  /* =========================================
+     CABEÇALHO MAIS COMPACTO
+  ========================================= */
+
+  .connect-header {
+    max-width: 1000px;
+
+    margin: 0 auto 16px;
+
+    text-align: center;
+  }
+
+  .connect-eyebrow {
+    margin-bottom: 6px;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.32em;
+  }
+
+  .connect-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.3rem, 3.8vw, 4.2rem);
+
+    line-height: 0.9;
+  }
+
+  .connect-header h2 em {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 0.9em;
+  }
+
+  .connect-header > p {
+    max-width: 780px;
+
+    margin: 9px auto 0;
+
+    font-size: 0.72rem;
+
+    line-height: 1.5;
+  }
+
+  /* BOLINHAS DOS TONS */
+
+  .connect-shades {
+    gap: 5px;
+
+    margin-top: 9px;
+  }
+
+  .connect-shades span {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* =========================================
+     GRID 3 X 2
+  ========================================= */
+
+  .connect-grid {
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  /* =========================================
+     CARD HORIZONTAL
+  ========================================= */
+
+  .connect-person-card {
+    height: 100%;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      40%
+      60%;
+
+    overflow: hidden;
+  }
+
+  /* =========================================
+     FOTO
+  ========================================= */
+
+  .connect-person-photo {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .connect-person-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+  }
+
+  .connect-card-number {
+    right: 10px;
+    bottom: 8px;
+
+    font-size: 1.35rem;
+  }
+
+  /* =========================================
+     CONTEÚDO
+  ========================================= */
+
+  .connect-person-content {
+    min-width: 0;
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .connect-person-heading {
+    min-height: 0;
+
+    gap: 8px;
+  }
+
+  .connect-person-heading h3 {
+    font-size: clamp(1.15rem, 1.55vw, 1.65rem);
+
+    line-height: 0.95;
+  }
+
+  .connect-person-heading p {
+    margin-top: 6px;
+
+    font-size: 0.48rem;
+
+    line-height: 1.35;
+
+    letter-spacing: 0.07em;
+  }
+
+  /* LINKEDIN */
+
+  .connect-in-badge {
+    width: 26px;
+    height: 26px;
+
+    font-size: 0.65rem;
+  }
+
+  /* =========================================
+     ÁREA QR CODE
+  ========================================= */
+
+  .connect-person-footer {
+    grid-template-columns:
+      78px
+      minmax(0, 1fr);
+
+    gap: 11px;
+
+    margin-top: auto;
+
+    padding-top: 9px;
+  }
+
+  .connect-qr-link {
+    width: 78px;
+    height: 78px;
+
+    padding: 4px;
+
+    display: grid;
+    place-items: center;
+  }
+
+  .connect-qr {
+    width: 68px;
+    height: 68px;
+
+    display: grid;
+
+    place-items: center;
+  }
+
+  .connect-qr img,
+  .connect-qr canvas {
+    width: 68px !important;
+    height: 68px !important;
+
+    display: block;
+  }
+
+  .connect-qr-copy span {
+    margin-bottom: 3px;
+
+    font-size: 0.45rem;
+
+    letter-spacing: 0.18em;
+  }
+
+  .connect-qr-copy strong {
+    font-size: 1.1rem;
+  }
+
+  .connect-qr-copy small {
+    margin-top: 4px;
+
+    font-size: 0.52rem;
+
+    line-height: 1.3;
+  }
+
+  /* =========================================
+     FINAL DA PÁGINA
+  ========================================= */
+
+  .connect-final-signature {
+    margin-top: 10px;
+
+    gap: 10px;
+  }
+
+  .connect-final-signature p {
+    font-size: 0.8rem;
+  }
+
+  .connect-final-signature > span {
+    width: 55px;
+  }
+
+  /* FUNDO DECORATIVO */
+
+  .connect-bg-number {
+    top: -140px;
+
+    font-size: 24rem;
+  }
+}
+/* ==========================================================
+   CORREÇÃO FINAL — QR MAIOR + REMOVER IMG QUEBRADA
+========================================================== */
+
+/* deixa apenas o QR gerado via JS aparecer */
+.connect-qr {
+  width: 96px;
+  height: 96px;
+
+  display: grid;
+  place-items: center;
+
+  background: #fff;
+}
+
+/* caixa do qr */
+.connect-qr-link {
+  width: 106px;
+  height: 106px;
+
+  padding: 5px !important;
+
+  display: grid;
+  place-items: center;
+
+  background: #fff !important;
+}
+
+/* área do texto do qr */
+.connect-qr-copy span {
+  color: #9f5d3f !important;
+  font-size: 0.54rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+}
+
+.connect-qr-copy strong {
+  font-size: 1.25rem !important;
+  color: #2f1e1a !important;
+}
+
+.connect-qr-copy small {
+  font-size: 0.62rem !important;
+  line-height: 1.35 !important;
+  color: rgba(47, 30, 26, 0.82) !important;
+}
+/* ==========================================================
+   CORREÇÃO FINAL — TEXTOS MAIS VISÍVEIS
+========================================================== */
+
+/* subtítulo pequeno: CONEXÕES AURENA */
+.connect-eyebrow {
+  color: #d99863 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.34em !important;
+  opacity: 1 !important;
+  text-shadow: 0 0 12px rgba(217, 152, 99, 0.08);
+}
+
+/* texto principal abaixo do título */
+.connect-header > p {
+  color: rgba(252, 248, 243, 0.9) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.7 !important;
+}
+
+/* bolinhas de tons um pouco mais visíveis */
+.connect-shades span {
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* rodapé final */
+.connect-final-signature p {
+  color: rgba(252, 248, 243, 0.9) !important;
+  font-size: 0.95rem !important;
+}
+
+.connect-final-signature strong {
+  color: #d7a16c !important;
+}
+
+/* linhas do rodapé */
+.connect-final-signature > span {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(215, 161, 108, 0.95)
+  ) !important;
+}
+/* ==========================================================
+   AURENA — QR CENTRALIZADO + TEXTO EMBAIXO
+========================================================== */
+
+@media (min-width: 1100px) {
+  /* lado direito do card */
+  .connect-person-content {
+    padding: 13px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+  }
+
+  /* mantém nome e cargo no topo */
+  .connect-person-heading {
+    width: 100%;
+  }
+
+  /* =========================================
+     BLOCO QR CENTRALIZADO
+  ========================================= */
+
+  .connect-person-footer {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(47, 30, 26, 0.12);
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    text-align: center;
+  }
+
+  /* caixa branca do QR */
+
+  .connect-qr-link {
+    width: 92px !important;
+    height: 92px !important;
+
+    padding: 5px !important;
+
+    margin: 0 auto !important;
+
+    display: grid !important;
+
+    place-items: center !important;
+
+    background: #ffffff !important;
+  }
+
+  /* QR propriamente dito */
+
+  .connect-qr {
+    width: 82px !important;
+    height: 82px !important;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    place-items: center;
+  }
+
+  .connect-qr canvas,
+  .connect-qr img {
+    width: 82px !important;
+    height: 82px !important;
+
+    display: block !important;
+  }
+
+  /* =========================================
+     TEXTO EMBAIXO
+  ========================================= */
+
+  .connect-qr-copy {
+    width: 100%;
+
+    text-align: center !important;
+  }
+
+  .connect-qr-copy span {
+    display: block;
+
+    margin: 2px 0 2px;
+
+    color: #a65f46 !important;
+
+    font-size: 0.47rem !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 0.22em !important;
+  }
+
+  .connect-qr-copy strong {
+    display: block;
+
+    color: #2f1e1a !important;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.12rem !important;
+
+    line-height: 1 !important;
+  }
+
+  .connect-qr-copy small {
+    display: block;
+
+    max-width: 150px;
+
+    margin: 4px auto 0;
+
+    color: rgba(47, 30, 26, 0.68) !important;
+
+    font-size: 0.48rem !important;
+
+    line-height: 1.3 !important;
+  }
+}
+/* ==========================================================
+   CORREÇÃO QR CODE AURENA
+   MOSTRAR SOMENTE 1 QR + CENTRALIZAR
+========================================================== */
+
+/* o qrcode.js cria canvas + imagem.
+   usamos somente o canvas */
+.connect-qr img {
+  display: none !important;
+}
+
+.connect-qr canvas {
+  display: block !important;
+
+  width: 90px !important;
+  height: 90px !important;
+
+  margin: 0 auto !important;
+}
+
+/* caixa do QR */
+.connect-qr {
+  width: 90px !important;
+  height: 90px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto !important;
+
+  overflow: hidden !important;
+}
+
+/* link que segura o QR */
+.connect-qr-link {
+  width: 100px !important;
+  height: 100px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto !important;
+
+  padding: 5px !important;
+
+  background: #ffffff !important;
+
+  overflow: hidden !important;
+}
+
+/* área inteira QR + texto */
+.connect-person-footer {
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 7px !important;
+
+  width: 100% !important;
+
+  margin-top: auto !important;
+
+  padding-top: 10px !important;
+
+  text-align: center !important;
+}
+
+/* texto abaixo do QR */
+.connect-qr-copy {
+  width: 100% !important;
+
+  text-align: center !important;
+}
+
+.connect-qr-copy span {
+  display: block !important;
+
+  margin: 0 0 2px !important;
+
+  color: #a65f46 !important;
+
+  font-size: 0.48rem !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 0.2em !important;
+}
+
+.connect-qr-copy strong {
+  display: block !important;
+
+  color: #2f1e1a !important;
+
+  font-family: "Cormorant Garamond", serif !important;
+
+  font-size: 1.15rem !important;
+
+  line-height: 1 !important;
+}
+
+.connect-qr-copy small {
+  display: block !important;
+
+  margin: 4px auto 0 !important;
+
+  color: rgba(47, 30, 26, 0.7) !important;
+
+  font-size: 0.5rem !important;
+
+  line-height: 1.3 !important;
+}
+
+/* ==========================================================
+   AURENA — QR CENTRALIZADO + TEXTO EMBAIXO
+========================================================== */
+
+@media (min-width: 1100px) {
+  /* parte inferior do card */
+  .connect-person-footer {
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 10px;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(47, 30, 26, 0.12);
+  }
+
+  /* caixa branca do QR */
+  .connect-qr-link {
+    width: 96px !important;
+    height: 96px !important;
+
+    padding: 5px !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    margin: 0 auto;
+
+    background: #ffffff !important;
+
+    border: 1px solid rgba(47, 30, 26, 0.12);
+
+    box-shadow: 0 5px 16px rgba(47, 30, 26, 0.08);
+  }
+
+  /* QR gerado pelo JavaScript */
+  .connect-qr {
+    width: 84px !important;
+    height: 84px !important;
+
+    display: grid;
+    place-items: center;
+  }
+
+  .connect-qr canvas,
+  .connect-qr img {
+    width: 84px !important;
+    height: 84px !important;
+
+    display: block !important;
+  }
+
+  /* texto abaixo do QR */
+  .connect-qr-copy {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .connect-qr-copy span {
+    display: block;
+
+    margin: 0 0 2px;
+
+    color: #a65f46 !important;
+
+    font-size: 0.46rem !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+  }
+
+  .connect-qr-copy strong {
+    display: block;
+
+    color: #2f1e1a !important;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.08rem !important;
+
+    line-height: 1;
+
+    font-weight: 600;
+  }
+
+  .connect-qr-copy small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(47, 30, 26, 0.68) !important;
+
+    font-size: 0.48rem !important;
+
+    line-height: 1.3;
+
+    text-align: center;
+  }
+}
+/* ==========================================================
+   AURENA — AJUSTE DEFINITIVO DOS QR CODES
+   QR GRANDE + USA TODO O ESPAÇO DO CARD
+========================================================== */
+
+@media (min-width: 1100px) {
+  /* lado direito de cada card */
+  .connect-person-content {
+    padding: 13px 14px 12px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  /* nome + função permanecem no topo */
+  .connect-person-heading {
+    flex: 0 0 auto !important;
+
+    width: 100% !important;
+
+    min-height: 0 !important;
+  }
+
+  /* ======================================================
+     ÁREA ABAIXO DO NOME
+     AGORA ELA OCUPA TODO O ESPAÇO RESTANTE
+  ====================================================== */
+
+  .connect-person-footer {
+    flex: 1 1 auto !important;
+
+    width: 100% !important;
+
+    min-height: 0 !important;
+
+    margin: 10px 0 0 !important;
+
+    padding: 10px 0 4px !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 7px !important;
+
+    text-align: center !important;
+
+    border-top: 1px solid rgba(47, 30, 26, 0.13) !important;
+  }
+
+  /* ======================================================
+     QR CODE MAIOR
+  ====================================================== */
+
+  .connect-qr-link {
+    width: 132px !important;
+    height: 132px !important;
+
+    padding: 6px !important;
+
+    margin: 0 auto !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid rgba(47, 30, 26, 0.13) !important;
+
+    box-shadow: 0 8px 18px rgba(47, 30, 26, 0.1) !important;
+
+    overflow: hidden !important;
+  }
+
+  .connect-qr {
+    width: 120px !important;
+    height: 120px !important;
+
+    margin: 0 auto !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+
+    overflow: hidden !important;
+  }
+
+  /* qrcode.js gera canvas + img.
+     mostramos apenas o canvas */
+
+  .connect-qr img {
+    display: none !important;
+  }
+
+  .connect-qr canvas {
+    display: block !important;
+
+    width: 120px !important;
+    height: 120px !important;
+
+    margin: 0 auto !important;
+  }
+
+  /* ======================================================
+     TEXTO ABAIXO DO QR
+  ====================================================== */
+
+  .connect-qr-copy {
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
+  }
+
+  /* LINKEDIN */
+
+  .connect-qr-copy span {
+    display: block !important;
+
+    margin: 1px 0 3px !important;
+
+    color: #9c573d !important;
+
+    font-size: 0.62rem !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 0.22em !important;
+
+    line-height: 1.2 !important;
+  }
+
+  /* CONECTE-SE */
+
+  .connect-qr-copy strong {
+    display: block !important;
+
+    margin: 0 !important;
+
+    color: #2f1e1a !important;
+
+    font-family: "Cormorant Garamond", serif !important;
+
+    font-size: 1.42rem !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1 !important;
+  }
+
+  /* Escaneie o QR... */
+
+  .connect-qr-copy small {
+    display: block !important;
+
+    max-width: 210px !important;
+
+    margin: 6px auto 0 !important;
+
+    color: rgba(47, 30, 26, 0.78) !important;
+
+    font-family: "Montserrat", sans-serif !important;
+
+    font-size: 0.61rem !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.35 !important;
+
+    text-align: center !important;
+  }
+}
