@@ -1193,3 +1193,126 @@ if (videoIbge) {
 
   observerVideoIbge.observe(videoIbge);
 }
+
+// ======================================================
+// AURENA — CONEXÕES / LINKEDIN
+// Entrada suave dos cards no scroll
+// ======================================================
+
+(() => {
+  const connectElements = document.querySelectorAll(".connect-reveal");
+
+  if (!connectElements.length) {
+    return;
+  }
+
+  /*
+   * FALLBACK
+   * Caso o navegador não suporte
+   * IntersectionObserver.
+   */
+
+  if (!("IntersectionObserver" in window)) {
+    connectElements.forEach((element) => {
+      element.classList.add("connect-visible");
+    });
+
+    return;
+  }
+
+  /*
+   * OBSERVADOR
+   */
+
+  const connectObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const element = entry.target;
+
+        const cards = [...document.querySelectorAll(".connect-person-card")];
+
+        const cardIndex = cards.indexOf(element);
+
+        /*
+         * Cada card aparece
+         * alguns milissegundos
+         * depois do anterior.
+         */
+
+        const delay = cardIndex >= 0 ? cardIndex * 90 : 0;
+
+        setTimeout(() => {
+          element.classList.add("connect-visible");
+        }, delay);
+
+        observer.unobserve(element);
+      });
+    },
+
+    {
+      threshold: 0.12,
+    },
+  );
+
+  /*
+   * OBSERVA TODOS
+   */
+
+  connectElements.forEach((element) => {
+    connectObserver.observe(element);
+  });
+})();
+// ======================================================
+// AURENA — QR CODE DAS CONEXÕES
+// Página intermediária: LinkedIn + GitHub
+// ======================================================
+
+document.querySelectorAll(".connect-qr").forEach((element) => {
+  const profile = element.dataset.profile;
+
+  if (!profile) {
+    return;
+  }
+
+  /*
+   * Cria a URL da página de conexões
+   * automaticamente usando o endereço
+   * atual do site.
+   */
+
+  const AURENA_URL = "https://SEU-ENDERECO-DO-AURENA.vercel.app/";
+
+  const profileUrl = `${AURENA_URL}conecte.html?p=${profile}`;
+
+  /*
+   * GERA O QR CODE
+   */
+
+  new QRCode(element, {
+    text: profileUrl,
+    width: 120,
+    height: 120,
+    colorDark: "#2f1e1a",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H,
+  });
+
+  /*
+   * O próprio QR também pode ser clicado
+   */
+
+  const link = element.closest(".connect-qr-link");
+
+  if (link) {
+    link.href = profileUrl;
+
+    // Mantém dentro da experiência AURENA
+    link.removeAttribute("target");
+
+    link.setAttribute("aria-label", `Abrir página de conexões de ${profile}`);
+  }
+});
