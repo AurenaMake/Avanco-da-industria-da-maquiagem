@@ -1316,3 +1316,10 @@ document.querySelectorAll(".connect-qr").forEach((element) => {
     link.setAttribute("aria-label", `Abrir página de conexões de ${profile}`);
   }
 });
+// ======================================================
+// AURENA — LABEL DOS QR CODES
+// ======================================================
+
+document.querySelectorAll(".connect-qr-copy span").forEach((label) => {
+  label.textContent = "LINKEDIN · GITHUB";
+});
