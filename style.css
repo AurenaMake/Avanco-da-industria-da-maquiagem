@@ -6153,3 +6153,144 @@ body.intro-lock {
     text-align: center !important;
   }
 }
+
+/* ==========================================================
+   AURENA — MANIFESTO FINAL
+   ACESSIBILIDADE E LEGIBILIDADE
+========================================================== */
+
+/* ------------------------------------------
+   "UMA ÚLTIMA PERGUNTA"
+------------------------------------------ */
+
+.manifesto-final-eyebrow {
+  font-size: 0.82rem !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.5 !important;
+
+  letter-spacing: 0.34em !important;
+
+  color: #d99a6c !important;
+
+  opacity: 1 !important;
+
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------------------
+   "Talvez a resposta não esteja..."
+------------------------------------------ */
+
+.manifesto-act-02 p {
+  color: rgba(245, 235, 227, 0.76) !important;
+
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem) !important;
+
+  line-height: 1.25 !important;
+}
+
+.manifesto-act-02 p span {
+  color: rgba(252, 248, 243, 0.96) !important;
+}
+
+/* ------------------------------------------
+   "TALVEZ ESTEJA EM"
+------------------------------------------ */
+
+.manifesto-small-word {
+  margin-bottom: 10px !important;
+
+  font-size: 0.78rem !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.5 !important;
+
+  letter-spacing: 0.32em !important;
+
+  color: rgba(252, 248, 243, 0.82) !important;
+
+  opacity: 1 !important;
+
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------------------
+   FRASE PRINCIPAL
+   "não deixar ninguém de fora"
+------------------------------------------ */
+
+.manifesto-act-03 h3 {
+  color: rgba(245, 235, 227, 0.86) !important;
+}
+
+.manifesto-act-03 h3 strong {
+  color: #e89a61 !important;
+}
+
+/* ------------------------------------------
+   "BELEZA SEM LACUNAS"
+------------------------------------------ */
+
+.manifesto-brand-final > p {
+  margin-top: 16px !important;
+
+  font-size: 0.76rem !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.5 !important;
+
+  letter-spacing: 0.36em !important;
+
+  color: #d99a6c !important;
+}
+
+/* A animação terminava voltando
+   para letter-spacing pequeno demais */
+
+@keyframes manifestoSloganReveal {
+  from {
+    opacity: 0;
+
+    letter-spacing: 0.65em;
+  }
+
+  to {
+    opacity: 1;
+
+    letter-spacing: 0.36em;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 680px) {
+  .manifesto-final-eyebrow {
+    font-size: 0.78rem !important;
+
+    letter-spacing: 0.25em !important;
+  }
+
+  .manifesto-small-word {
+    font-size: 0.74rem !important;
+
+    letter-spacing: 0.24em !important;
+  }
+
+  .manifesto-brand-final > p {
+    font-size: 0.72rem !important;
+
+    letter-spacing: 0.25em !important;
+  }
+
+  .manifesto-act-02 p {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+
+    line-height: 1.3 !important;
+  }
+}

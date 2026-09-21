@@ -1284,7 +1284,7 @@ document.querySelectorAll(".connect-qr").forEach((element) => {
    * atual do site.
    */
 
-  const AURENA_URL = "https://SEU-ENDERECO-DO-AURENA.vercel.app/";
+  const AURENA_URL = "https://aurena-inky.vercel.app/";
 
   const profileUrl = `${AURENA_URL}conecte.html?p=${profile}`;
 
